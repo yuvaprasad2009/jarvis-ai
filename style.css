@@ -1,0 +1,68 @@
+*{box-sizing:border-box}
+:root{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{margin:0;background:#05080d;color:#e8f7ff;overflow:hidden}
+button,textarea{font:inherit}button{-webkit-tap-highlight-color:transparent}
+.app{display:flex;height:100vh;overflow:hidden}
+.sidebar{width:270px;background:linear-gradient(180deg,#080d14,#05080d);border-right:1px solid #123246;display:flex;flex-direction:column;padding:18px 14px;box-shadow:8px 0 35px rgba(0,180,255,.06)}
+.brand{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:800;padding:8px 10px 20px;letter-spacing:2px}
+.brand-icon{width:30px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#00c8ff;color:#041018;box-shadow:0 0 20px #00c8ff;font-weight:900}
+.new-chat{border:1px solid #16445b;background:#09131c;color:#dff7ff;border-radius:10px;padding:11px 13px;cursor:pointer;text-align:left;display:flex;gap:9px;align-items:center;font-weight:500}
+.new-chat:hover{background:#0c1d29;border-color:#00bfff}
+.history-title{font-size:12px;color:#6f91a3;margin:25px 10px 8px}
+.history{overflow-y:auto}
+.history-item{border:0;background:transparent;color:#c8dce5;width:100%;text-align:left;padding:10px;border-radius:8px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.history-item:hover{background:#0c1d29;color:#fff}
+.sidebar-bottom{margin-top:auto}
+.side-button{width:100%;border:0;background:transparent;color:#c8dce5;padding:10px;text-align:left;border-radius:8px;cursor:pointer}
+.side-button:hover{background:#0c1d29}
+.version{color:#547181;font-size:11px;padding:10px}
+.main{flex:1;min-width:0;display:flex;flex-direction:column}
+.topbar{height:60px;border-bottom:1px solid #123246;background:rgba(5,8,13,.85);display:flex;align-items:center;padding:0 22px;gap:12px}
+.model-name{font-weight:800;letter-spacing:3px;color:#dff9ff;text-shadow:0 0 12px rgba(0,204,255,.45)}.status{margin-left:auto;color:#7da3b4;font-size:13px;display:flex;gap:6px;align-items:center}
+.status span{width:7px;height:7px;border-radius:50%;background:#22c55e}
+.mobile-menu{display:none;border:0;background:transparent;color:#dff7ff;font-size:22px}
+.chat{flex:1;overflow-y:auto}
+.messages{max-width:850px;margin:auto;padding:25px 20px 140px}
+.welcome{max-width:850px;margin:35px auto 0;padding:20px;text-align:center}
+
+.welcome h1{margin:0;font-size:34px;color:#e8fbff;text-shadow:0 0 22px rgba(0,210,255,.3)}.welcome p{color:#7293a3}
+.suggestions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:30px}
+.suggestions button{background:#08121b;color:#dff7ff;border:1px solid #163b4e;border-radius:14px;padding:16px;text-align:left;cursor:pointer}
+.suggestions button:hover{background:#0c1e2a;border-color:#00aee6;box-shadow:0 0 18px rgba(0,190,255,.1)}
+.suggestions strong{display:block;margin-bottom:5px}.suggestions span{color:#7293a3;font-size:13px}
+.message{display:flex;gap:13px;margin:28px 0}.avatar{flex-shrink:0;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#00bfff;color:#041018;box-shadow:0 0 14px rgba(0,191,255,.4);font-size:11px;font-weight:700}
+.message.user .avatar{background:#16232c;color:#cfe4ed;box-shadow:none}.message-content{min-width:0;flex:1}.message-text{line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}
+.citation{display:inline-flex;align-items:center;justify-content:center;min-width:19px;height:19px;padding:0 5px;margin-left:3px;border:1px solid #d5d5d5;border-radius:6px;background:#f4f4f4;color:#555;font-size:11px;font-weight:600;cursor:pointer;vertical-align:middle}
+.citation:hover{background:#e6e6e6;border-color:#aaa}
+.citation-popup{position:fixed;z-index:9999;width:300px;padding:14px;background:#fff;border:1px solid #ddd;border-radius:14px;box-shadow:0 12px 35px rgba(0,0,0,.16)}
+.citation-popup-title{font-size:14px;font-weight:600;margin-bottom:6px}.citation-popup-url{font-size:12px;color:#777;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:12px}
+.citation-open{width:100%;border:0;border-radius:9px;padding:9px;background:#111;color:#fff;cursor:pointer}
+.composer-area{position:fixed;bottom:0;left:270px;right:0;padding:15px 20px 10px;background:linear-gradient(transparent,#05080d 30%)}
+.composer{max-width:850px;margin:auto;display:flex;align-items:flex-end;gap:8px;padding:9px;border:1px solid #16445b;border-radius:18px;background:#08121b;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+textarea{flex:1;resize:none;border:0;outline:0;min-height:25px;max-height:130px;padding:8px;line-height:1.4;background:transparent;color:#e8f7ff}
+.icon-button,.send-button{width:38px;height:38px;border:0;border-radius:10px;cursor:pointer}.icon-button{background:#10212b;color:#bcefff}.send-button{background:#00aee6;color:#031017;box-shadow:0 0 16px rgba(0,174,230,.35);font-size:20px}.send-button:disabled{opacity:.4;cursor:default}
+.disclaimer{text-align:center;color:#547181;font-size:11px;padding-top:7px}
+@media(max-width:700px){.sidebar{position:fixed;z-index:1000;left:-280px;top:0;bottom:0;transition:left .2s}.sidebar.open{left:0}.mobile-menu{display:block}.composer-area{left:0}.welcome{margin-top:30px}.welcome h1{font-size:27px}.suggestions{grid-template-columns:1fr}.messages{padding-left:13px;padding-right:13px}.citation-popup{width:calc(100vw - 30px);left:15px!important;max-width:330px}}
+
+.status-loading { background: #f59e0b !important; }
+.status-error { background: #ef4444 !important; }
+.status-online { background: #22c55e !important; }
+.message-text code { padding: 2px 5px; border-radius: 5px; background: rgba(0,0,0,.06); font-family: monospace; }
+
+
+/* JARVIS 2D Arc Reactor */
+.reactor-wrap{height:290px;display:flex;align-items:center;justify-content:center;margin-bottom:4px;filter:drop-shadow(0 0 25px rgba(0,210,255,.18));}
+.reactor{position:relative;width:230px;height:230px;border-radius:50%;display:flex;align-items:center;justify-content:center;animation:reactorFloat 4s ease-in-out infinite;}
+.reactor:before{content:"";position:absolute;inset:5px;border-radius:50%;border:1px solid rgba(93,224,255,.35);box-shadow:0 0 30px rgba(0,190,255,.18),inset 0 0 35px rgba(0,190,255,.12);}
+.reactor-ring{position:absolute;border-radius:50%;border-style:solid;transform-origin:center;animation:spin 8s linear infinite;}
+.ring-1{inset:18px;border-width:2px 8px 2px 2px;border-color:#00d9ff transparent #0088ff #00d9ff;box-shadow:0 0 15px #00c8ff;}
+.ring-2{inset:40px;border-width:3px 2px 8px 2px;border-color:#7ff7ff #008cff transparent #00d9ff;animation-direction:reverse;animation-duration:5s;}
+.ring-3{inset:60px;border-width:2px 5px 2px 5px;border-color:#00bfff transparent #52f6ff transparent;animation-duration:3s;}
+.reactor-spokes{position:absolute;width:120px;height:120px;background:repeating-conic-gradient(from 0deg,rgba(72,227,255,.95) 0deg 7deg,transparent 7deg 45deg);clip-path:polygon(50% 0,60% 37%,100% 50%,60% 63%,50% 100%,40% 63%,0 50%,40% 37%);filter:drop-shadow(0 0 8px #00cfff);animation:spokePulse 2s ease-in-out infinite;}
+.reactor-core{position:absolute;width:58px;height:58px;border-radius:50%;background:radial-gradient(circle,#fff 0 9%,#d8ffff 10% 18%,#00d9ff 30%,#0078b8 60%,#03121c 72%);box-shadow:0 0 18px #8fffff,0 0 45px #00bfff,0 0 80px rgba(0,191,255,.7);animation:corePulse 1.8s ease-in-out infinite;}
+.reactor-glow{position:absolute;width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:0 0 12px #fff,0 0 30px #00d9ff,0 0 60px #00aaff;animation:corePulse 1.8s ease-in-out infinite;}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes corePulse{50%{transform:scale(1.12);filter:hue-rotate(35deg);}}
+@keyframes spokePulse{50%{transform:scale(.9) rotate(22.5deg);opacity:.75;filter:hue-rotate(50deg) drop-shadow(0 0 14px #00eaff);}}
+@keyframes reactorFloat{50%{transform:translateY(-5px)}}
+@media(max-width:700px){.reactor-wrap{height:220px}.reactor{width:175px;height:175px}.ring-1{inset:14px}.ring-2{inset:30px}.ring-3{inset:46px}.reactor-spokes{width:90px;height:90px}.reactor-core{width:45px;height:45px}.reactor-glow{width:9px;height:9px}}

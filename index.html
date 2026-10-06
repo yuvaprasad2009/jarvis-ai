@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JARVIS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">✦</div>
+        <span>JARVIS</span>
+      </div>
+
+      <button class="new-chat" id="newChat">
+        <span>＋</span> New chat
+      </button>
+
+      <div class="history-title">Recent chats</div>
+      <div class="history" id="history"></div>
+
+      <div class="sidebar-bottom">
+        <button class="side-button">⚙️ Settings</button>
+        <div class="version">AI Helper 1.0</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu">☰</button>
+        <div class="model-name">JARVIS</div>
+        <div class="status"><span></span> Local AI</div>
+      </header>
+
+      <section class="chat" id="chat">
+        <div class="welcome" id="welcome">
+          <div class="reactor-wrap" aria-label="Animated 2D arc reactor">
+            <div class="reactor">
+              <div class="reactor-ring ring-1"></div>
+              <div class="reactor-ring ring-2"></div>
+              <div class="reactor-ring ring-3"></div>
+              <div class="reactor-spokes"></div>
+              <div class="reactor-core"></div>
+              <div class="reactor-glow"></div>
+            </div>
+          </div>
+          <h1>Good day. I am JARVIS.</h1>
+          <p>Your local AI assistant is ready.</p>
+
+          <div class="suggestions">
+            <button data-prompt="Explain artificial intelligence in simple words.">
+              <strong>💡 Learn</strong><span>Explain something</span>
+            </button>
+            <button data-prompt="Explain a recent technology topic I should know about. I know you may not have live web access.">
+              <strong>🌐 Explore</strong><span>Ask JARVIS something</span>
+            </button>
+            <button data-prompt="Help me write a Python program.">
+              <strong>💻 Code</strong><span>Write some code</span>
+            </button>
+            <button data-prompt="Give me some ideas for a school science project.">
+              <strong>🎓 Study</strong><span>Get study help</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="messages" id="messages"></div>
+      </section>
+
+      <div class="composer-area">
+        <div class="composer">
+          <button class="icon-button" id="micButton" title="Voice input">🎤</button>
+          <textarea id="messageInput" placeholder="Message JARVIS..." rows="1"></textarea>
+          <button class="send-button" id="sendButton" title="Send">↑</button>
+        </div>
+        <div class="disclaimer">Runs locally in your browser • No API key • First launch downloads a small AI model</div>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
